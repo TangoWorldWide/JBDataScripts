@@ -87,7 +87,7 @@ bool loadCSV(vector <int> &playerCount, vector <string> &mapNames){ //Prompts an
         getline(fileIn, num2, columnDelimitor); //get 2nd number (ct players)
         playerCount.push_back( stoi(num1) + stoi(num2) ); //add numbers together and put into vector
 
-        getline(fileIn, name1, ','); //get mapname
+        getline(fileIn, name1, columnDelimitor); //get mapname
         mapNames.push_back(name1); //add to vector
 
         seekToNextLine(fileIn); //we're done getting data from this line, move to the next
@@ -136,8 +136,8 @@ void analyze(vector <int> &playerCount, vector <string> &mapNames, vector <int> 
 
 void sort(vector <int> &playerCountOut, vector <string> &mapNamesOut){ //sorts the entries from most players to least players
     bool success = true;
-    while(success){ //keep looping until it's sorted
-
+    while(success) //keep looping until it's sorted
+    { 
         success = false;
 
         for (int i = 0; i < playerCountOut.size() - 1; i++) //run through all of the entries
