@@ -43,80 +43,79 @@ jb_sorse_v7: 26
 ### Instructions
 1. Navigate to the folder containing the code and build the program with this command:  
 ```
-g++ playerHours.cpp -o playerHours --std=c++11  
+g++ playerHours.cpp -o playerHours --std=c++17  
 ```
 2. Once it finishes building, run the program with  
 ```
-./playerHours
+./playerHours <csv path> -wdc [number]
 ```  
-3. The program will prompt you for a `.csv` file. If the file is in the same folder as the executable, you can just input `results.csv`. Otherwise, include a path to the `.csv`.  
-4. Once it finishes loading the file, it will prompt you for a line to start reading at. This can be used to only read data from a certian date forwards. You can find the line to start at by opening the data in a text or spreadsheet editor and scrolling until you see the date you want to start at in the left-hand column. Note the line number next to it and then input it into the program.  
-	You can input 0 to start at the beginning of the file.
-5. The program will output a sorted list of all the maps recorded from the specified line with the combined number of players next to them.
+-w: proccesses the last week of data (the last 2,016 entries)
+-d: proccesses the last day of data (288 entries)
+-c [number]: procces all data starting at line [number]. 0 for the beginning of the file.
+ex. `./playerhours results.csv -c 10562`
 
-#### Example Output:  
+
+#### Example Outputs:  
 ```
- ./playerHours
-file path to .csv file:
-results_5-16-21.csv
+./playerhours results.csv -c 3000
 loading file...
 done loading!
-10265 entries loaded.
-At what line do you want to start? (0 is the beginning)
-0
-analylizing...
+3728 entries loaded.
+Starting at line 3000
+Analylizing...
 done analyzing!
-jb_synergy_v3f: 1
-training1: 1
-de_mocha: 2
-de_grind: 4
-de_bank: 4
-lobby_mapveto: 4
-ba_jail_canyondam_go: 6
-cs_agency: 6
-de_nuke: 10
-dz_blacksite: 11
-de_pitstop: 18
-jb_longstreet_tww: 21
-dz_sirocco: 37
-de_shortdust: 51
-cs_office: 58
-jb_fentex_fix_hdr: 73
-de_dust2: 117
-jb_sorse_v7: 123
-jb_synergy_v3g: 141
-jb_oasis_v2c: 147
-jb_moonjail_v2/jb_moonjail_v2: 151
-jb_tropico_v2: 176
-jb_autumn_v2: 180
-jb_lego_jail_2k17b: 218
-jb_mario_rescue_v1_2: 250
-jb_bigmt_b2: 256
-ba_mlcastle_se: 273
-jb_mountaincraft_v6: 288
-jb_quad_v3: 317
-de_mirage: 372
-jb_obama_v5_beta_tww: 382
-jb_mountaincraft_tww: 454
-jb_vice_tango_final: 469
-jb_synergy_v3e: 501
-jb_chicken_island_b2: 706
-jb_pyrenees_v1_2: 785
-jb_quake_a04d: 1044
-jb_minecraft_tango_v3: 1581
-jb_moonjail_v2: 2148
-jb_dystopian_b6: 2618
-jb_kwejsi_v5_fix: 2636
-jb_quad_v2: 2984
-jb_vipinthemix_tango_final: 3886
-jb_avalanche_csgo_b8c: 4390
-jb_arcade_b5: 6341
-jb_moti2_final: 6563
-jb_clouds_tango_v7d: 8102
-jb_sg_dojo_v5-6: 8266
-jb_spy_vs_spy_beta7: 8369
-jb_minecraft_tango_v2: 9036
-jb_clouds_beta02: 9702
-jb_undertale_v1d: 9785
-jb_peanut_tango_v3: 11154
+jb_vice_tango_final: 28
+ba_mlcastle_se: 64
+jb_fentex_fix_hdr: 70
+jb_quake_a04d: 73
+jb_sorse_v7: 101
+jb_pyrenees_v1_2: 121
+jb_quad_v2: 162
+jb_dystopian_b6: 179
+jb_synergy_v3e: 211
+jb_moti2_final: 218
+jb_mountaincraft_tww: 274
+jb_avalanche_csgo_b8c: 276
+jb_vipinthemix_tango_final: 281
+jb_kwejsi_v5_fix: 302
+jb_arcade_b5: 596
+jb_peanut_tango_v3: 734
+jb_sg_dojo_v5-6: 794
+jb_spy_vs_spy_beta7: 802
+jb_minecraft_tango_v2: 841
+jb_undertale_v1d: 1019
+jb_clouds_tango_v7d: 1430
+```
+
+```
+./playerhours results.csv -w
+loading file...
+done loading!
+3728 entries loaded.
+Starting at line 1712
+Analylizing...
+done analyzing!
+jb_chicken_island_b2: 22
+jb_autumn_v2: 23
+jb_vice_tango_final: 53
+jb_fentex_fix_hdr: 70
+jb_quake_a04d: 85
+jb_sorse_v7: 101
+ba_mlcastle_se: 196
+jb_synergy_v3e: 221
+jb_mountaincraft_tww: 274
+jb_pyrenees_v1_2: 283
+jb_quad_v2: 386
+jb_avalanche_csgo_b8c: 478
+jb_dystopian_b6: 675
+jb_vipinthemix_tango_final: 687
+jb_arcade_b5: 1289
+jb_kwejsi_v5_fix: 1311
+jb_spy_vs_spy_beta7: 1463
+jb_moti2_final: 1704
+jb_sg_dojo_v5-6: 2306
+jb_minecraft_tango_v2: 2393
+jb_peanut_tango_v3: 2662
+jb_undertale_v1d: 3046
+jb_clouds_tango_v7d: 4170
 ```
