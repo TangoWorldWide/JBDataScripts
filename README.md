@@ -49,9 +49,12 @@ g++ playerHours.cpp -o playerHours --std=c++17
 ```
 ./playerHours <csv path> -wdc [number]
 ```  
--w: proccesses the last week of data (the last 2,016 entries)
--d: proccesses the last day of data (288 entries)
--c [number]: procces all data starting at line [number]. 0 for the beginning of the file.
+_-w:_ proccesses the last week of data (the last 2,016 entries)
+
+_-d:_ proccesses the last day of data (288 entries)
+
+_-c_ [number]: procces all data starting at line [number]. 0 for the beginning of the file.
+
 ex. `./playerhours results.csv -c 10562`
 
 
