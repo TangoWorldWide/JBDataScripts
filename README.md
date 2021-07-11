@@ -3,7 +3,7 @@ This is a collection of scripts for collecting an analyzing data from Jailbreak.
 
 ## index.js  
 #### Program written by FetchBot  
-This program pings Jailbreak's gameME API (http://tangoworldwide.gameme.com/api/serverinfo/104.153.108.145:27015/players) every 5 minutes and collects the data in two forms.  
+This program pings Jailbreak's gameME [API](http://tangoworldwide.gameme.com/api/serverinfo/104.153.108.145:27015/players) every 5 minutes and collects the data in two forms.  
 
 1. Inside `/out/results.csv`, you can find the processed API calls. The file contains 5 columns: timestamp (the month might be inaccurate for some reason), number of players on T, number of players on CT, SteamIDs of players on T, SteamIds of players on CT. The first line will be left blank for you to add your own headers. It's recommended to replace the first line with this:  
   ```
@@ -36,9 +36,10 @@ For example, if the data recorded is:
 
 The tallies returned by the program would be:  
 ```
-jb_quad_v2: 15
-jb_sorse_v7: 26
+jb_quad_v2: 75
+jb_sorse_v7: 130
 ```  
+(The program multiplies the values by 5 to get the number of player-minutes spent on each map)
 
 ### Instructions
 1. Navigate to the folder containing the code and build the program with this command:  
